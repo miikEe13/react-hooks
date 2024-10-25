@@ -16,12 +16,10 @@ export const CallbackHook = () => {
     useEffect(() => {
       // incrementFather();
     }, [incrementFather])
-    
-    
+
     // const incrementFather = () => {
     //     setCounter( counter + 1);
     // }
-
 
     return (
         <>

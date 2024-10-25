@@ -6,15 +6,12 @@ export const Quote = ({ author, quote }) => {
   const pRef = useRef();
   const [boxSize, setBoxSize] = useState({ width: 0, height: 0 })
 
-  useLayoutEffect(() => {
-    
+  useLayoutEffect(() => {  
     const { height, width } =  pRef.current.getBoundingClientRect();
     setBoxSize({ height, width });
     
   }, [quote])
   
-
-
   return (
     <>
       <blockquote 
