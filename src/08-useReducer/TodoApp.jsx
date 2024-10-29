@@ -28,11 +28,7 @@ export const TodoApp = () => {
                         onNewTodo={ handleNewTodo }  
                     />
                 </div>
-
             </div>
-
-
-        
         </>
     )
 }
