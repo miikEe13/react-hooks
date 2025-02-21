@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes, Link } from 'react-router-dom';
 
 import { UserProvider } from './context/UserProvider';
+import { ThemeProvider } from './context/ThemeProvider';
 import { HomePage } from './HomePage';
 import { AboutPage } from './AboutPage';
 import { LoginPage } from './LoginPage';
@@ -10,23 +11,25 @@ import { Navbar } from './Navbar';
 
 export const MainApp = () => {
   return (
-    <UserProvider>
+    <ThemeProvider>
+      <UserProvider>
         {/* <h1>MainApp</h1> */}
         {/* <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/login">Login</Link> */}
+          <Link to="/about">About</Link>
+          <Link to="/login">Login</Link> */}
         <Navbar />
         <hr />
         <Routes>
-          <Route path="/" element={ <HomePage /> } />
-          <Route path="about" element={ <AboutPage /> } />
-          <Route path="login" element={ <LoginPage /> } />
-          <Route path='mike' element={<Mike />}/>
+          <Route path="/" element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path='mike' element={<Mike />} />
 
           {/* <Route path="/*" element={ <LoginPage /> } /> */}
-          <Route path="/*" element={ <Navigate to="/about" /> } /> {/* Redirect to about page cuando la ruta no se encuentra */}
+          <Route path="/*" element={<Navigate to="/about" />} /> {/* Redirect to about page cuando la ruta no se encuentra */}
 
         </Routes>
-    </UserProvider>
+      </UserProvider>
+    </ThemeProvider>
   )
 }
